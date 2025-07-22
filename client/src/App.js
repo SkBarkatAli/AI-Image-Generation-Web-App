@@ -1,7 +1,9 @@
 import styled, { ThemeProvider } from "styled-components";
 import { darkTheme } from "./utils/Theme";
 import Home from "./pages/Home";
-import Createpost from "./pages/CreatePost"
+import CreatePost from "./pages/CreatePost"
+import {BrowserRouter, Route, Routes} from "react-router-dom"
+import Navbar from "./components/Navbar";
 
 const Container = styled.div`
 width: 100%;
@@ -17,20 +19,26 @@ const Wrapper = styled.div`
 height: 100%;
 position: relative;
 display: flex;
-flex-direction column;
+flex-direction: column;
 justigy-content: space-between;
 flex:3;
 `;
 
 function App() {
-  return <ThemeProvider theme={darkTheme}>
+  return (<ThemeProvider theme={darkTheme}>
     <Container>
       <Wrapper>
-        <Home/>
-        <CreatePost/>
+        <BrowserRouter>
+        <Navbar/>
+        <Routes>
+          <Route path="/" element={<Home/>} exact />
+          <Route path="/post" element={<CreatePost/>} exact />
+        </Routes>
+        </BrowserRouter>
       </Wrapper>
     </Container>
-  </ThemeProvider>;
+  </ThemeProvider>
+ );
 }
 
 export default App;
