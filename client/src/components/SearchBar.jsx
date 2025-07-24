@@ -21,7 +21,7 @@ function SearchBar() {
     <SearchBarContainer>
         <SearchOutlined/>
         <input
-         placeholder='Search with prompt or name . . .'
+         placeholder= "Search with prompt or name . . ."
         style={{
           border: "none",
           outline: "none",
