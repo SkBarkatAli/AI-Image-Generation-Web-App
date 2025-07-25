@@ -6,9 +6,9 @@ import CircularProgress from '@mui/material/CircularProgress';
 
 const Container = styled.div`
   flex: 1;
+  min-height: 300px;
   display: flex;
   gap: 16px;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 16px;
